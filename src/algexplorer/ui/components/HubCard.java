@@ -1,13 +1,10 @@
 package algexplorer.ui.components;
 
+import algexplorer.ui.UITheme;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-/**
- * A simple card component used on the hub screen. It displays a title and an optional
- * description and fires the provided ActionListener when clicked.
- */
 public class HubCard extends JPanel {
     private final JButton button;
 

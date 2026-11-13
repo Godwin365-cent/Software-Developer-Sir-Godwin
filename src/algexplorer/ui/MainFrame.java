@@ -7,6 +7,10 @@ import java.awt.*;
  * Main application window. It holds a sidebar for navigation and a central area
  * that swaps between the hub and individual module panels.
  */
+import algexplorer.ui.UITheme;
+import algexplorer.ui.StructuresPanel;
+import algexplorer.ui.BenchmarkPanel;
+
 public class MainFrame extends JFrame {
     private final CardLayout cardLayout = new CardLayout();
     private final JPanel contentPanel = new JPanel(cardLayout);
