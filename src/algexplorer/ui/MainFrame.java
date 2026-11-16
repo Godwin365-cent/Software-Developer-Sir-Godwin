@@ -18,8 +18,14 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         setTitle("Algorithm Explorer");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(960, 640);
-        setLocationRelativeTo(null);
+
+        // Use screen bounds that EXCLUDE the Windows taskbar
+        Rectangle usable = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        int w = Math.min(960, usable.width);
+        int h = Math.min(640, usable.height);
+        setSize(w, h);
+        // Centre within the usable area (not the full screen, so we stay above the taskbar)
+        setLocation(usable.x + (usable.width - w) / 2, usable.y + (usable.height - h) / 2);
 
         // Sidebar with navigation buttons
         ModernSidebar sidebar = new ModernSidebar(this::showPanel);
